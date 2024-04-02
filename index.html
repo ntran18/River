@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>River Programming Language</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="title">River Programming Language</h1>
+      <nav>
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#examples">Examples</a></li>
+          <li><a href="#developers">Developers</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="overview">
+        <h2>Story of River</h2>
+        <p>
+          In the tranquil embrace of nature, rivers flow in a manner such that ecosystems flourish
+          where it goes. This concept of a peaceful flow gave life to the concept we call River.
+          River is a statically typed language designed to put the users first. We have created
+          River to become a programming language where the developer feels calm expressing their
+          programming desires.
+        </p>
+        <h2>Feature Overview</h2>
+        <ul>
+          <li>Indentation-based syntax</li>
+          <li>Object-oriented structures (Models)</li>
+          <li>Support for various data types including custom Models</li>
+          <li>Tasks for function declarations, both synchronous and asynchronous</li>
+          <li>Input and output handling with inflow and outflow functions</li>
+          <li>Iteration through a single loop function</li>
+          <li>Assignment using ~ operator</li>
+          <li>Variables follow snake_case convention</li>
+          <li>Built-in data structure: Stream</li>
+          <li>Usage of frozen keyword for constants</li>
+        </ul>
+      </section>
+      <section id="examples">
+        <h2>Examples</h2>
+        <pre><code>
+text my_name = inflow("What's your name?")
+outflow(my_name)
+            </code></pre>
+        <pre><code>
+num y ~ 0
+    loop()
+        if(y == 1)
+            dry
+        y +~ 1
+outflow(y)
+            </code></pre>
+        <pre><code>
+stream our_array ~ [1,2,3]
+task sum_array_elements(our_array)
+    num sum ~ 0
+    loop(3)
+        sum ~ sum + n
+    return sum
+            </code></pre>
+        <pre><code>
+model Dog
+    num age = 0
+    task birthday()
+        age +~ 1
+            </code></pre>
+        <pre><code>
+frozen text language_name = "River"
+language_name = "Pyth"   // Would throw an error
+            </code></pre>
+      </section>
+      <section id="developers">
+        <h2>Developers</h2>
+        <div class="developer_images_container">
+          <div class="row">
+            <div class="developer">
+              <img src="developerplaceholder.jpeg" alt="Bryan Ardon-Contreras" />
+              <h3>Bryan Ardon-Contreras</h3>
+            </div>
+            <div class="developer">
+              <img src="davis.jpeg" alt="Bryan Ardon-Contreras" />
+              <h3>Davis Banks</h3>
+            </div>
+            <div class="developer">
+              <img src="developerplaceholder.jpeg" alt="Bryan Ardon-Contreras" />
+              <h3>Edward Hallim</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="developer">
+              <img src="developerplaceholder.jpeg" alt="Bryan Ardon-Contreras" />
+              <h3>Henry Benso</h3>
+            </div>
+            <div class="developer">
+              <img src="developerplaceholder.jpeg" alt="Bryan Ardon-Contreras" />
+              <h3>Nicholas Lee</h3>
+            </div>
+            <div class="developer">
+              <img src="developerplaceholder.jpeg" alt="Bryan Ardon-Contreras" />
+              <h3>Maika Tran</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Find the River compiler on <a href="https://github.com/river-lang/compiler">GitHub</a></p>
+    </footer>
+  </body>
+</html>

@@ -33,20 +33,28 @@
           <li>Statically typed language</li>
           <li>Object-oriented structures (Models)</li>
           <li>Support for various data types including custom Models</li>
-          <li>Input and output handling with inflow and outflow functions</li>
-          <li>Iteration through a single loop function</li>
+          <li>Output handling with a built-in Outflow function</li>
+          <li>
+            Standard library available for mathematical functions and array
+            length
+          </li>
+          <li>
+            Various iteration methods available through a single loop function
+          </li>
           <li>Assignment using ~ operator</li>
           <li>Variables follow snake_case convention</li>
-          <li>Usage of frozen keyword for constants</li>
+          <li>Usage of frozen keyword for constant variables</li>
         </ul>
       </section>
       <section id="examples">
         <h2>Examples</h2>
         <pre><code>
-text my_name ~ inflow("What's your name?")
-outflow(my_name)
+// hello world
+text hello_word ~ "hello_world";
+outflow(hello_world);
             </code></pre>
         <pre><code>
+// basic loops
 num y ~ 0;
 loop() >
     if(y == 3) >
@@ -56,16 +64,18 @@ loop() >
 >
             </code></pre>
         <pre><code>
-num[] our_array ~ [1,2,3]
+// tasks and iterables
+num[] our_array ~ [1,2,3];
 task sum_array_elements(our_array) >
-    num sum ~ 0
+    num sum ~ 0;
     loop(num n in our_array) >
-        sum +~ n
+        sum +~ n;
     >
-    return sum
+    return sum;
 >
             </code></pre>
         <pre><code>
+// models
 model Dog > constructor > num age, text name >
     task updateAge(num q) >
         age +~ q;
@@ -80,8 +90,18 @@ d.updateAge(2);
 d.getAge();
             </code></pre>
         <pre><code>
-frozen text language_name = "River"
-language_name ~ "Pyth"   // Would throw an error
+// frozen variables
+frozen text language_name = "river";
+language_name ~ "bang"; // would throw an error
+            </code></pre>
+        <pre><code>
+// standard library
+num[] our_array ~ [1,2,3];
+length ~ ln(our_array);
+num s ~ sin(3.14);
+num c ~ cos(3.14);
+num e ~ exp(3.14);
+num b ~ bytes(3.14);
             </code></pre>
       </section>
       <section id="developers">
@@ -97,16 +117,13 @@ language_name ~ "Pyth"   // Would throw an error
               <h3>Davis Banks</h3>
             </div>
             <div class="developer">
-              <img src="Edward.JPG" alt="Bryan Ardon-Contreras"/>
+              <img src="Edward.JPG" alt="Bryan Ardon-Contreras" />
               <h3>Edward Hallim</h3>
             </div>
           </div>
           <div class="row">
             <div class="developer">
-              <img
-                src="henry.png"
-                alt="image of Henry Benso"
-              />
+              <img src="henry.png" alt="image of Henry Benso" />
               <h3>Henry Benso</h3>
             </div>
             <div class="developer">

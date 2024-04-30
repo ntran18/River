@@ -47,34 +47,45 @@
       <section id="examples">
         <h2>Examples</h2>
         <pre><code>
-text my_name = inflow("What's your name?")
+text my_name ~ inflow("What's your name?")
 outflow(my_name)
             </code></pre>
         <pre><code>
-num y ~ 0
-    loop()
-        if(y == 1)
-            dry
-        y +~ 1
-outflow(y)
+num y ~ 0;
+loop() >
+    if(y == 3) >
+        dry;
+    >
+    y +~ 1;
+>
             </code></pre>
         <pre><code>
-stream our_array ~ [1,2,3]
-task sum_array_elements(our_array)
+num[] our_array ~ [1,2,3]
+task sum_array_elements(our_array) >
     num sum ~ 0
-    loop(3)
-        sum ~ sum + n
+    loop(num n in our_array) >
+        sum +~ n
+    >
     return sum
+>
             </code></pre>
         <pre><code>
-model Dog
-    num age = 0
-    task birthday()
-        age +~ 1
+model Dog > constructor > num age, text name >
+    task updateAge(num q) >
+        age +~ q;
+    >
+    task getAge() >
+        return age;
+    >
+>
+
+Dog d ~ Dog(0, "pop");
+d.updateAge(2);
+d.getAge();
             </code></pre>
         <pre><code>
 frozen text language_name = "River"
-language_name = "Pyth"   // Would throw an error
+language_name ~ "Pyth"   // Would throw an error
             </code></pre>
       </section>
       <section id="developers">
